@@ -1,23 +1,30 @@
 #include <stdio.h>
 
-struct book
-  {
-    char *title;
-    char *author;
-    int edition;
-    float price;
-  };
+struct band 
+{
+  char name[100];
+  char album[100];
+  int year;
+};
 
 int main(void)
 {
-  // Another way of initializing a struct
-  struct book rare_book = {"The Adventures of Tom Sawyer", "Mark Twain", 1, 7899.99};
+ 
+  struct band my_fav_band;
+  
+  printf("Name your favorite band: ");
+  scanf("%[^\n]", my_fav_band.name);
+  fgetc(stdin);
 
-  //Let's print the book info
-  printf("Title:   %s\n", rare_book.title);
-  printf("Author:  %s\n", rare_book.author);
-  printf("Edition: %d\n", rare_book.edition);
-  printf("Price:   $%.2f\n", rare_book.price);
+  printf("Name their album: ");
+  scanf("%[^\n]", my_fav_band.album);
+
+  printf("Year of release: ");
+  scanf("%d", &my_fav_band.year);
+
+  printf("\nBand:   %s\n", my_fav_band.name);
+  printf("Album:  %s\n", my_fav_band.album);
+  printf("Year:   %d\n", my_fav_band.year);
 
   return 0;
 }

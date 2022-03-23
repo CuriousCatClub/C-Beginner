@@ -1,36 +1,34 @@
 #include <stdio.h>
 
-struct album
-{
-  char *album_name;
-  int year;
-};
-
-void create_album(struct album *album, char name[], int released);
-
+struct book
+  {
+    char *title;
+    char *author;
+    int edition;
+    float price;
+  };
 
 int main(void)
 {
-  struct album best;
-  char name[20];
-  int released;
+  float your_price;
 
-  printf("Enter album name: ");
-  scanf("%[^\n]", name);
+  // Not all variables must be initialized
+  struct book rare_book = {
+    .title = "The Adventures of Tom Sawyer", 
+    .author = "Mark Twain", 
+    .edition = 1};
 
-  printf("Enter the year of album release: ");
-  scanf("%d", &released);
+  //Let's print the book info
+  printf("Title:   %s\n", rare_book.title);
+  printf("Author:  %s\n", rare_book.author);
+  printf("Edition: %d\n", rare_book.edition);
 
-  create_album(&best, name, released);
+  printf("-------------------------------------\n");
+  printf("How much would you pay for this item? ");
+  scanf("%f", &rare_book.price);
 
-  printf("\nALBUM NAME: %s\n", best.album_name);
-  printf("RELEASED:   %d\n", best.year);
+  printf("\nYour bid: %.2f\n", rare_book.price);
+
 
   return 0;
-}
-
-void create_album(struct album *album, char name[], int released)
-{
-  album->album_name = name;
-  album->year = released;
 }

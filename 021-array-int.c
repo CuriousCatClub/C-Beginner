@@ -3,9 +3,12 @@
 int main(void)
 {
   int i;
+
+  // One way of initializing an array
   int odd[] = {1, 3, 5, 7, 9};
   int even[5];
 
+  // Another way of initializing an array
   even[0] = 2;
   even[1] = 4;
   even[2] = 5;

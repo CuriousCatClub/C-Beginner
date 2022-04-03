@@ -14,7 +14,7 @@ int main(void)
   printf("%d\n", memcmp(s1, s2, sizeof(int) * 4));
 
   // Below will return -3; 5 - 8 = -3
-  printf("%d\n", memcmp(s1, s2, sizeof(int) * 5));
+  printf("%d\n", memcmp(s1, s2, sizeof(s1)));
 
   return 0;
 }
